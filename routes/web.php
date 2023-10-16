@@ -17,5 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [ViewController::class, "home"])->name("home");
 Route::get('/product/{slug}', [ViewController::class, "product"])->name("product");
 Route::get('/cart', [ViewController::class, "cart"])->name("cart");
-Route::get('/order', [ViewController::class, "order"])->name("order");
-Route::get('/orderdetail', [ViewController::class, "orderdetail"])->name("orderdetail");
+Route::get('/account', [ViewController::class, "account"])->name("account");
+
+Route::get('/login', function () {
+    return view("auth.login");
+})->name('login');
+Route::get('/register', function () {
+    return view("auth.register");
+})->name('register');
